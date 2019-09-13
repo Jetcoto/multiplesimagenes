@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorAccent7"
+        tools:context="com.samanta.anupam.sliderapplication.MainActivity">
+
+
+
+
+        //-----------------------
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorAccent3"
+            app:cardCornerRadius="15dp"
+            android:layout_marginBottom="15dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/post_profile_image"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"/>
+
+                    <customfonts.MyTextView_Lato_Bold
+                        android:id="@+id/txtpostname"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_toStartOf="@+id/optionposts"
+                        android:layout_toEndOf="@+id/post_profile_image"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:text="Jetzael Contreras"/>
+
+                    <customfonts.MyTextView_Lato_Light
+                        android:id="@+id/txtpostdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/txtpostname"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_toStartOf="@+id/optionposts"
+                        android:layout_toEndOf="@+id/post_profile_image"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp"
+                        android:text="Ayer a las 19:42 pm"/>
+                    <ImageView
+                        android:id="@+id/optionposts"
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:contentDescription="TODO" android:src="@drawable/ic_more_horiz_black_24dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_alignParentRight="true"
+                        />
+
+                </RelativeLayout>
+
+
+                    <customfonts.MyTextView_Roboto_Medium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtcomentario2"
+                        android:visibility="gone"
+                        android:textSize="18sp"
+                        android:textColor="@android:color/white"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    //slider de imagenes
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="0dp">
+                    </androidx.viewpager.widget.ViewPager>
+                    //fin slider imagenes
+
+                    //animacion estrella
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/animation_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_alignBottom="@+id/viewPager"
+                        android:layout_alignParentTop="true"
+                        app:lottie_url="http://52.14.140.160/noctus_app/users/1/foto_perfil.jpg"
+                        app:lottie_autoPlay="false"
+                        app:lottie_fileName="animacionlike.json"
+                        app:lottie_imageAssetsFolder="assets"
+                        app:lottie_loop="false"
+                        android:visibility="gone"
+                        />
+                    //fin animacion estrella
+
+                </RelativeLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false" android:orientation="horizontal"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp">
+
+                    <RelativeLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:id="@+id/SliderDots"
+                            android:layout_width="392dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="0dp"
+                            android:gravity="center"
+
+                            android:orientation="horizontal">
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/likeic"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:clickable="true"
+                            android:contentDescription="TODO"/>
+
+                        <ImageView
+                            android:id="@+id/localizar"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_toEndOf="@+id/likeic"
+                            android:contentDescription="TODO"
+                            android:src="@drawable/ic_location_on_black_24dp2" />
+
+                        <ImageView
+                            android:id="@+id/comentaric"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_toEndOf="@+id/localizar"
+                            android:contentDescription="TODO"
+                            android:src="@drawable/ic_mode_comment_black_24dp" />
+                        <ImageView
+                            android:id="@+id/reenviar"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="TODO" android:src="@drawable/images"
+                            android:layout_marginRight="5dp"
+                            android:layout_alignParentRight="true"/>
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp">
+
+                    <customfonts.MyTextView_Roboto_Medium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtlikes"
+                        android:textColor="@android:color/white"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp">
+
+                    <customfonts.MyTextView_Roboto_Medium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtcomentario"
+                        android:textColor="@android:color/white"/>
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+    </LinearLayout>
+</layout>
